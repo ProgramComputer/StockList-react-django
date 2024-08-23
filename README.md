@@ -10,7 +10,7 @@ Heavily edited from [https://blog.logrocket.com/using-react-django-create-app-tu
 First, create a Python virtual environment to isolate the projects:
 
 ```bash
-python3 -m venv env
+python3 -m venv .env
 ```
 
 Then, activate it:
