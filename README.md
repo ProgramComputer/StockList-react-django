@@ -16,7 +16,7 @@ python3 -m venv .env
 Then, activate it:
 
 ```bash
-source env/bin/activate
+source .env/bin/activate
 ```
 
 `cd` into the _venv_ and add the Django dependencies:
