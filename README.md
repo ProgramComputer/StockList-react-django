@@ -2,6 +2,8 @@
 Add stocks
 See a graphical representation
 
+Django on port 8000
+React on port 3000
 ## Credits
 Heavily edited from [https://blog.logrocket.com/using-react-django-create-app-tutorial/](https://github.com/diogosouza/django-react-logrocket) 
 

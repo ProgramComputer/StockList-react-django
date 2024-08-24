@@ -3,7 +3,7 @@ import React, { Component, Fragment } from "react";
 import axios from "axios";
 
 import { API_URL } from "../constants";
-
+import {Modal,ModalHeader,Button,ModalFooter} from 'reactstrap';
 class ConfirmRemovalModal extends Component {
   state = {
     modal: false
@@ -25,27 +25,27 @@ class ConfirmRemovalModal extends Component {
   render() {
     return (
       <Fragment>
-        <button color="danger" onClick={() => this.toggle()}>
+        <Button color="danger" onClick={() => this.toggle()}>
           Remove
-        </button>
-        <div isOpen={this.state.modal} toggle={this.toggle}>
-          <div toggle={this.toggle}>
+        </Button>
+        <Modal isOpen={this.state.modal} toggle={this.toggle}>
+          <ModalHeader toggle={this.toggle}>
             Do you really wanna delete the stock?
-          </div>
+          </ModalHeader>
 
-          <div>
-            <button type="button" onClick={() => this.toggle()}>
+          <ModalFooter>
+            <Button type="button" onClick={() => this.toggle()}>
               Cancel
-            </button>
-            <button
+            </Button>
+            <Button
               type="button"
               color="primary"
               onClick={() => this.deleteStock(this.props.pk)}
             >
               Yes
-            </button>
-          </div>
-        </div>
+            </Button>
+          </ModalFooter>
+        </Modal>
       </Fragment>
     );
   }

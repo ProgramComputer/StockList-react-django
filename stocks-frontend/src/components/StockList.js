@@ -20,7 +20,7 @@ class StockList extends Component {
           {!stocks || stocks.length <= 0 ? (
             <tr>
               <td colSpan="6" align="center">
-                <b>Ops, no one here yet</b>
+                <b>Add a stock</b>
               </td>
             </tr>
           ) : (

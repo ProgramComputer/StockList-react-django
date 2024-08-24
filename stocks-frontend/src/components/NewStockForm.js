@@ -1,10 +1,10 @@
 import React from "react";
-import { Button, Form, FormGroup, Input, Label } from "reactstrap";
+import { Button, Form, FormGroup, Input, Label,FormFeedback, ToastBody } from "reactstrap";
 
 import axios from "axios";
 
 import { API_URL } from "../constants";
-
+import {toast} from "react-toastify";
 class NewStockForm extends React.Component {
   state = {
     pk: 0,
@@ -28,14 +28,23 @@ class NewStockForm extends React.Component {
     axios.post(API_URL, this.state).then(() => {
       this.props.resetState();
       this.props.toggle();
+    }).catch(function (error) {
+
+       toast.error('Failed to edit stock. 0-100 (no decimals)');
     });
-  };
+
+  }
+
 
   editStock = e => {
     e.preventDefault();
     axios.put(API_URL + this.state.pk, this.state).then(() => {
       this.props.resetState();
       this.props.toggle();
+    }).catch(function (error) {
+
+
+       toast.error('Failed to edit stock. 0-100 (no decimals)');
     });
   };
 
@@ -68,6 +77,6 @@ class NewStockForm extends React.Component {
       </Form>
     );
   }
-}
+};
 
 export default NewStockForm;
